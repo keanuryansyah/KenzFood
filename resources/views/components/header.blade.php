@@ -31,7 +31,7 @@
                         <div class="many-item">
                             0
                         </div>
-                        <span class="cart-content-wrapper"></span>
+                        <span class="cart-content-wrapper show"></span>
                         <div class="cart-content">
                             <h1>CART</h1>
                         </div>

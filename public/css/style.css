@@ -290,6 +290,10 @@ a.header-logo {
     display: none;
 }
 
+.cart-content-wrapper.show {
+    display: flex;
+}
+
 .cart-content {
     position: absolute;
     top: 200%;

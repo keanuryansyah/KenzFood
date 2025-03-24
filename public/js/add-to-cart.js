@@ -1,3 +1,3 @@
 window.addEventListener('DOMContentLoaded', () => {
-    alert('hello');
+    // alert('hello');
 });
