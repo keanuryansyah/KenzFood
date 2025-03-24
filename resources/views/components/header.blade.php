@@ -93,7 +93,17 @@
         <div class="cart-content-unfilled cc">
             <i data-feather="shopping-bag"></i>
             <span>empty cart</span>
+            <div class="close-cart-wrapper">
+                x
+            </div>
         </div>
-        <div class="cart-content-filled cc"></div>
+        <div class="cart-content-filled cc show">
+            <div class="ccf-row1">
+                <h2>Cart Items</h2>
+                <div class="close-cart-wrapper">
+                    x
+                </div>
+            </div>
+        </div>
     </div>
 </div>
