@@ -31,10 +31,6 @@
                         <div class="many-item">
                             0
                         </div>
-                        <span class="cart-content-wrapper show"></span>
-                        <div class="cart-content">
-                            <h1>CART</h1>
-                        </div>
                     </div>
                     <a id="signin-btn" class="global-btn white-btn" href="#">Sign In</a>
                 </div>
@@ -79,10 +75,6 @@
                         <div class="many-item">
                             0
                         </div>
-                        <span class="cart-content-wrapper"></span>
-                        <div class="cart-content">
-                            <h1>CART</h1>
-                        </div>
                     </div>
                     <a id="signin-btn" class="global-btn white-btn" href="#">Sign In</a>
                 </div>
@@ -95,3 +87,13 @@
         </div>
     </div>
 </header>
+
+<div class="cart-wrapper show">
+    <div class="cart-content-wr">
+        <div class="cart-content-unfilled cc">
+            <i data-feather="shopping-bag"></i>
+            <span>empty cart</span>
+        </div>
+        <div class="cart-content-filled cc"></div>
+    </div>
+</div>
