@@ -361,12 +361,12 @@
 .product-qty {
     display: flex;
     gap: 0.2rem;
-    width: 100%;
-    justify-content: center;
+    /* width: 100%; */
+    /* justify-content: center; */
 }
 
-#plus-item,
-#min-item {
+.plus-item,
+.min-item {
     width: 25px;
     height: 25px;
     font-size: 1.2rem;
@@ -375,7 +375,7 @@
     cursor: pointer;
 }
 
-#qty-input {
+.qty-input {
     width: 25px;
     height: 25px;
     background-color: var(--col-white1);

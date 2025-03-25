@@ -87,7 +87,7 @@
                     <div id="menu-content-row2" class="mencon">
                         <div id="card-menu-wrapper">
                             @foreach($bestMenus as $bestMenu)
-                            <div class="card-menu">
+                            <div data-product="menu-index-{{$bestMenu->id}}" class="card-menu">
                                 <div id="card-menu-row1" class="product-fim">
                                     <img src="{{asset('images/' . $bestMenu->fim)}}" alt="">
                                 </div>
@@ -95,9 +95,9 @@
                                     <h4 class="product-name">{{$bestMenu->name}}</h4>
                                     <span class="product-price">Rp{{$bestMenu->price}}</span>
                                     <div class="product-qty">
-                                        <button type="button" id="plus-item">-</button>
-                                        <span id="qty-input">0</span>
-                                        <button type="button" id="min-item">+</button>
+                                        <button type="button" class="plus-item">-</button>
+                                        <span class="qty-input">0</span>
+                                        <button type="button" class="min-item">+</button>
                                     </div>
                                     <div class="product-button">
                                         <a class="global-btn white-btn add-to-cart-btn" href="">Add to Cart</a>
