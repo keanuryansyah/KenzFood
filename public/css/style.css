@@ -112,6 +112,14 @@ a {
     color: var(--col-white2);
 }
 
+.grey-btn {
+    background-color: grey;
+}
+
+.grey-btn.active {
+    background-color: var(--col-white2) !important;
+}
+
 .transparent-btn-white {
     border: 2px solid var(--col-white1);
     color: var(--col-white1);
@@ -170,10 +178,6 @@ a {
     height: 100px;
     background-color: var(--col-green1);
     color: var(--col-white1);
-}
-
-#header-section.hide {
-    display: none;
 }
 
 #header-section-2 {
@@ -329,6 +333,7 @@ a.header-logo {
 
 .cart-content-wr {
     width: 400px;
+    max-width: 100%;
     height: 100vh;
     background-color: var(--col-white1);
     position: absolute;
@@ -390,7 +395,8 @@ a.header-logo {
     width: 100%;
     box-shadow: 0 2px 1px grey;
     justify-content: space-between;
-    padding: 1rem;
+    height: 75px;
+    padding: 0 1rem;
 }
 
 .ccf-row1 > h2 {
@@ -416,9 +422,9 @@ a.header-logo {
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 1rem;
     padding: 1rem;
-    height: 78%;
+    height: calc(100% - 75px - 125px);
     /* background-color: red; */
     overflow-y: auto;
     overflow-x: hidden;
@@ -497,11 +503,10 @@ a.header-logo {
     display: flex;
     flex-direction: column;
     /* background-color: red; */
-    height: calc(100% - 72px - 78%);
+    height: 125px;
     justify-content: space-between;
-    gap: 1rem;
     padding: 1rem;
-    box-shadow: 0 -1px 2px var(--col-black1);
+    box-shadow: 0 -2px 2px grey;
 }
 
 .ccf-row3-row1 {

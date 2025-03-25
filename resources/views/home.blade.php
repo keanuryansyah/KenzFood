@@ -95,12 +95,12 @@
                                     <h4 class="product-name">{{$bestMenu->name}}</h4>
                                     <span class="product-price">Rp{{$bestMenu->price}}</span>
                                     <div class="product-qty">
-                                        <button type="button" class="plus-item">-</button>
+                                        <button type="button" class="min-item">-</button>
                                         <span class="qty-input">0</span>
-                                        <button type="button" class="min-item">+</button>
+                                        <button type="button" class="plus-item">+</button>
                                     </div>
                                     <div class="product-button">
-                                        <a class="global-btn white-btn add-to-cart-btn" href="">Add to Cart</a>
+                                        <a class="global-btn grey-btn add-to-cart-btn" href="#">Add to Cart</a>
                                         <div class="product-detail">
                                             <i data-feather="info"></i>
                                         </div>
@@ -116,7 +116,7 @@
     </section>
 
     @push('scripts')
-    <script src="{{asset('js/add-to-cart.js')}}"></script>
+    <script src="{{asset('js/cart.js')}}"></script>
     @endpush
 
 </x-main>

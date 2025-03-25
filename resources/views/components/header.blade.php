@@ -88,7 +88,7 @@
     </div>
 </header>
 
-<div class="cart-wrapper show">
+<div class="cart-wrapper">
     <div class="cart-content-wr">
         <div id="cart-content-unfilled" class="cc">
             <i data-feather="shopping-bag"></i>
