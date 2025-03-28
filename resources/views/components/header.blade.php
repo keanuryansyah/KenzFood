@@ -90,14 +90,14 @@
 
 <div class="cart-wrapper">
     <div class="cart-content-wr">
-        <div id="cart-content-unfilled" class="cc">
+        <div id="cart-content-unfilled" class="cc show">
             <i data-feather="shopping-bag"></i>
             <span>empty cart</span>
             <div class="close-cart-wrapper">
                 <span>X</span>
             </div>
         </div>
-        <div id="cart-content-filled" class="cc show">
+        <div id="cart-content-filled" class="cc">
             <div class="ccf-row1">
                 <h2>cart</h2>
                 <div class="close-cart-wrapper">
@@ -105,179 +105,15 @@
                 </div>
             </div>
             <div class="ccf-row2">
-                <div class="product-ctn">
-                    <div class="pc-col1">
-                        <img src="{{asset('images/burger1.jpg')}}" alt="">
-                    </div>
-                    <div class="pc-col2">
-                        <div class="pc-col2-row1">
-                            <span class="prod-name-on-cart">double beef burger</span>
-                            <span class="prod-price-on-cart">Rp20.000</span>
-                        </div>
-                        <div class="pc-col2-row2">
-                            <div class="product-qty">
-                                <button type="button" class="plus-item">-</button>
-                                <span class="qty-input">0</span>
-                                <button type="button" class="min-item">+</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="pc-col3">
-                        <i data-feather="trash-2"></i>
-                    </div>
-                </div>
-                <div class="product-ctn">
-                    <div class="pc-col1">
-                        <img src="{{asset('images/pizza1.jpg')}}" alt="">
-                    </div>
-                    <div class="pc-col2">
-                        <div class="pc-col2-row1">
-                            <span class="prod-name-on-cart">melt cheese pizza</span>
-                            <span class="prod-price-on-cart">Rp20.000</span>
-                        </div>
-                        <div class="pc-col2-row2">
-                            <div class="product-qty">
-                                <button type="button" class="plus-item">-</button>
-                                <span class="qty-input">0</span>
-                                <button type="button" class="min-item">+</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="pc-col3">
-                        <i data-feather="trash-2"></i>
-                    </div>
-                </div>
-                <div class="product-ctn">
-                    <div class="pc-col1">
-                        <img src="{{asset('images/pizza1.jpg')}}" alt="">
-                    </div>
-                    <div class="pc-col2">
-                        <div class="pc-col2-row1">
-                            <span class="prod-name-on-cart">melt cheese pizza</span>
-                            <span class="prod-price-on-cart">Rp20.000</span>
-                        </div>
-                        <div class="pc-col2-row2">
-                            <div class="product-qty">
-                                <button type="button" class="plus-item">-</button>
-                                <span class="qty-input">0</span>
-                                <button type="button" class="min-item">+</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="pc-col3">
-                        <i data-feather="trash-2"></i>
-                    </div>
-                </div>
-                <div class="product-ctn">
-                    <div class="pc-col1">
-                        <img src="{{asset('images/pizza1.jpg')}}" alt="">
-                    </div>
-                    <div class="pc-col2">
-                        <div class="pc-col2-row1">
-                            <span class="prod-name-on-cart">melt cheese pizza</span>
-                            <span class="prod-price-on-cart">Rp20.000</span>
-                        </div>
-                        <div class="pc-col2-row2">
-                            <div class="product-qty">
-                                <button type="button" class="plus-item">-</button>
-                                <span class="qty-input">0</span>
-                                <button type="button" class="min-item">+</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="pc-col3">
-                        <i data-feather="trash-2"></i>
-                    </div>
-                </div>
-                <div class="product-ctn">
-                    <div class="pc-col1">
-                        <img src="{{asset('images/pizza1.jpg')}}" alt="">
-                    </div>
-                    <div class="pc-col2">
-                        <div class="pc-col2-row1">
-                            <span class="prod-name-on-cart">melt cheese pizza</span>
-                            <span class="prod-price-on-cart">Rp20.000</span>
-                        </div>
-                        <div class="pc-col2-row2">
-                            <div class="product-qty">
-                                <button type="button" class="plus-item">-</button>
-                                <span class="qty-input">0</span>
-                                <button type="button" class="min-item">+</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="pc-col3">
-                        <i data-feather="trash-2"></i>
-                    </div>
-                </div>
-                <div class="product-ctn">
-                    <div class="pc-col1">
-                        <img src="{{asset('images/pizza1.jpg')}}" alt="">
-                    </div>
-                    <div class="pc-col2">
-                        <div class="pc-col2-row1">
-                            <span class="prod-name-on-cart">melt cheese pizza</span>
-                            <span class="prod-price-on-cart">Rp20.000</span>
-                        </div>
-                        <div class="pc-col2-row2">
-                            <div class="product-qty">
-                                <button type="button" class="plus-item">-</button>
-                                <span class="qty-input">0</span>
-                                <button type="button" class="min-item">+</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="pc-col3">
-                        <i data-feather="trash-2"></i>
-                    </div>
-                </div>
-                <div class="product-ctn">
-                    <div class="pc-col1">
-                        <img src="{{asset('images/pizza1.jpg')}}" alt="">
-                    </div>
-                    <div class="pc-col2">
-                        <div class="pc-col2-row1">
-                            <span class="prod-name-on-cart">melt cheese pizza</span>
-                            <span class="prod-price-on-cart">Rp20.000</span>
-                        </div>
-                        <div class="pc-col2-row2">
-                            <div class="product-qty">
-                                <button type="button" class="plus-item">-</button>
-                                <span class="qty-input">0</span>
-                                <button type="button" class="min-item">+</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="pc-col3">
-                        <i data-feather="trash-2"></i>
-                    </div>
-                </div>
-                <div class="product-ctn">
-                    <div class="pc-col1">
-                        <img src="{{asset('images/pizza1.jpg')}}" alt="">
-                    </div>
-                    <div class="pc-col2">
-                        <div class="pc-col2-row1">
-                            <span class="prod-name-on-cart">melt cheese pizza</span>
-                            <span class="prod-price-on-cart">Rp20.000</span>
-                        </div>
-                        <div class="pc-col2-row2">
-                            <div class="product-qty">
-                                <button type="button" class="plus-item">-</button>
-                                <span class="qty-input">0</span>
-                                <button type="button" class="min-item">+</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="pc-col3">
-                        <i data-feather="trash-2"></i>
-                    </div>
-                </div>
+                <!-- CART ITEM IN HERE -->
             </div>
             <div class="ccf-row3">
                 <div class="ccf-row3-row1">
                     <span class="span-subtotal">Subtotal:</span>
-                    <span class="subtotal-result">Rp129.000</span>
+                    <div class="subtotal-result">
+                        <span>Rp</span>
+                        <span class="last-subtotal">0</span>
+                    </div>
                 </div>
                 <div class="ccf-row3-row2">
                     <a id="checkout-btn" href="#" class="global-btn green-btn">Checkout</a>

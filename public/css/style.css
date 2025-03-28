@@ -113,11 +113,11 @@ a {
 }
 
 .grey-btn {
-    background-color: grey;
+    background-color: #c8c2ba;
 }
 
 .grey-btn.active {
-    background-color: var(--col-white2) !important;
+    background-color: var(--col-white2);
 }
 
 .transparent-btn-white {
@@ -472,7 +472,7 @@ a.header-logo {
 }
 
 .prod-name-on-cart {
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: 600;
     text-transform: capitalize;
 }
@@ -523,9 +523,12 @@ a.header-logo {
 }
 
 .subtotal-result {
-    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+
+.subtotal-result span {
     font-size: 1.2rem;
-    color: var(--col-black1);
 }
 
 #checkout-btn {

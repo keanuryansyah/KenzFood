@@ -1,28 +1,31 @@
 window.addEventListener('DOMContentLoaded', () => {
 
     // HEADER FIXED
-
     let headerSection2 = document.getElementById('header-section-2');
-
-    let currentScrolled;
+    let currentScrolled = 0; // Pastikan nilai awal adalah angka
     let ticking = false; // Flag untuk memastikan hanya satu requestAnimationFrame aktif
 
     const handleScroll = () => {
         let windowScrolled = window.scrollY;
 
-        if (windowScrolled > 100) {
+        // Cek apakah sudah melewati batas scroll tertentu
+        if (windowScrolled > 90) {
             if (windowScrolled < currentScrolled) {
-                headerSection2.classList.add('show');
+                if (!headerSection2.classList.contains('show')) {
+                    headerSection2.classList.add('show');
+                }
             } else {
+                if (headerSection2.classList.contains('show')) {
+                    headerSection2.classList.remove('show');
+                }
+            }
+        } else {
+            if (headerSection2.classList.contains('show')) {
                 headerSection2.classList.remove('show');
             }
-
-            currentScrolled = windowScrolled;
-        } else {
-            headerSection2.classList.remove('show');
-            currentScrolled = '';
         }
 
+        currentScrolled = windowScrolled;
         ticking = false; // Reset flag setelah fungsi selesai dieksekusi
     };
 
@@ -32,4 +35,5 @@ window.addEventListener('DOMContentLoaded', () => {
             requestAnimationFrame(handleScroll); // Optimasi performa dengan requestAnimationFrame
         }
     });
+
 });
