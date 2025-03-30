@@ -1,5 +1,6 @@
-window.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
 
+    let headerSection2 = document.getElementById('header-section-2');
     let body = document.body;
 
     // OPEN CART
@@ -70,11 +71,20 @@ window.addEventListener('DOMContentLoaded', () => {
     // ADD TO CART FUNCTIONS
     let addToCart = (btn) => {
 
+        // GET HEADER SECTION & SHOW THIS
+        headerSection2.classList.add('show');
+
         // GET ROOT PARENT
         let rootParent = btn.closest('.card-menu');
 
         // GET PRODUCT QTY
         let qtyProduct = rootParent.querySelector('.qty-input').innerHTML;
+
+        let manyItems = document.querySelectorAll('.many-item');
+
+        manyItems.forEach(manyItem => {
+            manyItem.innerHTML = Number(manyItem.innerHTML) + Number(qtyProduct);
+        })
 
         if (!btn.classList.contains('active') && qtyProduct == 0) {
             return;
@@ -93,7 +103,7 @@ window.addEventListener('DOMContentLoaded', () => {
         let priceProduct = rootParent.querySelector('.product-price').innerHTML.replace(/[^\d.,]/g, '');
 
         // GET PRODUCT PRICE TO NUMBER
-        let priceProductNumber = Number(priceProduct);
+        let priceProductNumber = Number(priceProduct.replace(/\./g, "")) * Number(qtyProduct);
 
         let cartContents = document.querySelectorAll('.cc');
         cartContents.forEach(cartContent => {
@@ -189,9 +199,18 @@ window.addEventListener('DOMContentLoaded', () => {
                 // SUBTOTAL
                 let spanSubtotal = document.querySelector('.subtotal-result .last-subtotal');
 
-                let currentSubtotal = Number(spanSubtotal.innerHTML);
+                let currentSubtotal = Number(spanSubtotal.innerHTML.replace(/\./g, ""))
 
-                console.log(currentSubtotal)
+                let amount = currentSubtotal + priceProductNumber;
+
+                let lastSubtotal = amount.toLocaleString('id-ID');
+
+                spanSubtotal.innerHTML = lastSubtotal;
+
+                // RESET ALL
+                rootParent.querySelector('.qty-input').innerHTML = '0';
+
+                btn.classList.remove('active');
 
             }
 

@@ -1,4 +1,4 @@
-window.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
 
     // HEADER FIXED
     let headerSection2 = document.getElementById('header-section-2');
