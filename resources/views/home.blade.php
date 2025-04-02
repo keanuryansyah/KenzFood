@@ -1,6 +1,5 @@
 @push('styles')
 <link rel="stylesheet" href="{{asset('css/home.css')}}">
-<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
 @endpush
 
 @section('title', 'Home')
@@ -87,7 +86,7 @@
                     <div id="menu-content-row2" class="mencon">
                         <div id="card-menu-wrapper">
                             @foreach($bestMenus as $bestMenu)
-                            <div data-product="prod-{{$bestMenu->id}}" class="card-menu">
+                            <div data-product="{{$bestMenu->id}}" class="card-menu">
                                 <div id="card-menu-row1" class="product-fim">
                                     <img src="{{asset('images/' . $bestMenu->fim)}}" alt="">
                                 </div>
@@ -100,7 +99,7 @@
                                         <button type="button" class="plus-item">+</button>
                                     </div>
                                     <div class="product-button">
-                                        <a data-product="prod-{{$bestMenu->id}}" class="global-btn grey-btn add-to-cart-btn" href="#">Add to Cart</a>
+                                        <a data-product="{{$bestMenu->id}}" class="global-btn grey-btn add-to-cart-btn" href="#">Add to Cart</a>
                                         <div class="product-detail">
                                             <i data-feather="info"></i>
                                         </div>

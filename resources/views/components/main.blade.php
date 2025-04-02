@@ -28,9 +28,12 @@
     </main>
 
 
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+
     <script>
         feather.replace();
     </script>
+
 
 
     <script src="{{asset('js/main.js')}}"></script>

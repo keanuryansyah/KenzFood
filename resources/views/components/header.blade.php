@@ -26,13 +26,13 @@
                     </nav>
                 </div>
                 <div id="header-content-col3" class="hecon">
+                    <a id="signin-btn" class="global-btn white-btn" href="#">Sign In</a>
                     <div class="cart-icon">
                         <i data-feather="shopping-bag"></i>
                         <div class="many-item">
                             0
                         </div>
                     </div>
-                    <a id="signin-btn" class="global-btn white-btn" href="#">Sign In</a>
                 </div>
                 <div id="header-content-col4" class="hecon">
                     <span></span>
@@ -70,13 +70,13 @@
                     </nav>
                 </div>
                 <div id="header-content-col3" class="hecon">
+                    <a id="signin-btn" class="global-btn white-btn" href="#">Sign In</a>
                     <div class="cart-icon">
                         <i data-feather="shopping-bag"></i>
                         <div class="many-item">
                             0
                         </div>
                     </div>
-                    <a id="signin-btn" class="global-btn white-btn" href="#">Sign In</a>
                 </div>
                 <div id="header-content-col4" class="hecon">
                     <span></span>
