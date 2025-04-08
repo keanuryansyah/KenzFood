@@ -77,6 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Sampe sini.
 
+
     // Fungsi add to cart.
     let addToCart = (btn) => {
 
@@ -84,16 +85,10 @@ document.addEventListener('DOMContentLoaded', () => {
         headerSection2.classList.add('show');
 
         // Ambil parent tertua dari tombol yang di klik.
-        let rootParent = btn.closest('.card-menu');
+        let rootParent = getParentProductOnCardMenu(btn);
 
         // Ambil jumlah produk.
         let qtyProduct = rootParent.querySelector('.qty-input').innerHTML;
-
-        // Ambil harga produk.
-        let priceProduct = rootParent.querySelector('.product-price').innerHTML.replace(/[^\d.,]/g, '');
-
-        // Jadikan harga produk ke tipe data integer.
-        let priceProductNumber = Number(priceProduct.replace(/\./g, "")) * Number(qtyProduct);
 
         // Ambil ikon cart pada header section.
         let manyItems = document.querySelectorAll('.many-item');
@@ -107,58 +102,18 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         // Ambil ID produk.
-        let idProduct = rootParent.getAttribute('data-product');
+        let idProduct = getIdProduct(rootParent);
 
-        // Cek apakah produk sudah ada didalam localstorage dan cart.
-        let checkingProductOnLocalStorage = localStorage.getItem('temp-cart');
+        // Ambil harga produk.
+        let priceProduct = rootParent.querySelector('.product-price').innerHTML.replace(/[^\d.,]/g, '');
 
-        let checkFlag = false;
+        // Jadikan harga produk ke tipe data integer.
+        let priceProductNumber = Number(priceProduct.replace(/\./g, "")) * Number(qtyProduct);
 
-        if (checkingProductOnLocalStorage) {
-            let parseCheckings = JSON.parse(checkingProductOnLocalStorage);
+        // Cek apakah item sudah ada di dalam localstorage
+        let checkDataOnLocalStorage = checkItemOnLocalStorage(idProduct, qtyProduct, rootParent, priceProductNumber, btn);
 
-            parseCheckings.forEach(parseChecking => {
-                if (parseChecking.idProduct == idProduct) {
-                    // Ambil semua item pada cart.
-                    let allItems = document.querySelectorAll('#cart-content-filled .ccf-row2 .product-ctn');
-                    allItems.forEach(allItem => {
-                        if (allItem.getAttribute('data-product') === idProduct) {
-                            allItem.querySelector('.qty-input').innerHTML = Number(allItem.querySelector('.qty-input').innerHTML) + Number(qtyProduct);
-
-                            // Rest tombol pada cart menu.
-                            rootParent.querySelector('.qty-input').innerHTML = '0';
-
-                            btn.classList.remove('active');
-
-                            // Ambil subtotal harga.
-                            let lastSubtotal = document.querySelector('.last-subtotal');
-
-                            let newSubtotal = Number(lastSubtotal.innerHTML.replace(/\./g, "")) + priceProductNumber;
-
-                            lastSubtotal.innerHTML = newSubtotal.toLocaleString('id-ID');
-
-                            // Update localstorage
-                            parseChecking.qtyProduct = Number(parseChecking.qtyProduct) + Number(qtyProduct);
-
-                            let newData = [];
-
-                            parseCheckings.forEach(parseCheck => {
-                                newData.push(parseCheck);
-                            });
-
-                            localStorage.setItem('temp-cart', JSON.stringify(newData));
-
-
-                            checkFlag = true;
-
-                        }
-                    })
-
-                }
-            })
-        }
-
-        if (checkFlag) {
+        if (checkDataOnLocalStorage) {
             return;
         }
 
@@ -167,7 +122,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Ambil nama produk.
         let nameProduct = rootParent.querySelector('.product-name').innerHTML;
-
 
         // Ambil konten pembungkus pada cart.
         let cartContents = document.querySelectorAll('.cc');
@@ -256,42 +210,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 makePcCol3.appendChild(trashIcon);
 
-
                 makeProductCtn.append(makePcCol1, makePcCol2, makePcCol3);
 
                 cartItemWrapper.appendChild(makeProductCtn);
                 feather.replace();
 
-                // SUBTOTAL
-                let spanSubtotal = document.querySelector('.subtotal-result .last-subtotal');
-
-                let currentSubtotal = Number(spanSubtotal.innerHTML.replace(/\./g, ""))
-
-                let amount = currentSubtotal + priceProductNumber;
-
-                let lastSubtotal = amount.toLocaleString('id-ID');
-
-                spanSubtotal.innerHTML = lastSubtotal;
+                // Dapatkan subtotal.
+                getLastSubtotal(priceProductNumber);
 
                 // Reset tombol pada card menu.
-                rootParent.querySelector('.qty-input').innerHTML = '0';
+                resetButtonOnCardMenu(rootParent, btn);
 
-                btn.classList.remove('active');
-
-                // CREATE OBJECT TEMPORARY CART
-                let tempCart = [
-                    {
-                        idProduct: idProduct,
-                        qtyProduct: qtyProduct
-                    }
-                ];
-
-                // IF LOCAL STORAGE temp-cart IS CREATED
+                // Cek apakah localstorage temp-cart sudah ada?
                 if (localStorage.getItem('temp-cart')) {
                     let parseTempCart = JSON.parse(localStorage.getItem('temp-cart'));
 
                     parseTempCart.push({
                         idProduct: idProduct,
+                        fimProduct: fimProduct,
+                        nameProduct: nameProduct,
+                        priceProduct: priceProductNumber,
                         qtyProduct: qtyProduct
                     });
 
@@ -300,6 +238,17 @@ document.addEventListener('DOMContentLoaded', () => {
                     return;
 
                 }
+
+                // CREATE OBJECT TEMPORARY CART
+                let tempCart = [
+                    {
+                        idProduct: idProduct,
+                        fimProduct: fimProduct,
+                        nameProduct: nameProduct,
+                        priceProduct: priceProductNumber,
+                        qtyProduct: qtyProduct
+                    }
+                ];
 
                 localStorage.setItem('temp-cart', JSON.stringify(tempCart));
 
@@ -328,6 +277,12 @@ document.addEventListener('DOMContentLoaded', () => {
     })
 
     // Sampe sini.
+
+    // Ambil temporary cart localstorage
+    let tempCart = localStorage.getItem('temp-cart');
+    if (tempCart) {
+
+    }
 
 });
 

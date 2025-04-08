@@ -267,11 +267,11 @@ a.header-logo {
     justify-content: center;
     align-items: center;
     position: relative;
-    color: var(--col-white2);
+    color: var(--col-white1);
     /* background-color: red; */
     cursor: pointer;
     gap: 0.5rem;
-    border: 2px solid var(--col-gold1);
+    border: 2px solid var(--col-white1);
     border-radius: 20px;
     padding: 0 0.2rem;
 }

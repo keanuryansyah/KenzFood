@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // HEADER FIXED
     let headerSection2 = document.getElementById('header-section-2');
     let currentScrolled = 0; // Pastikan nilai awal adalah angka
-    let ticking = false; // Flag untuk memastikan hanya satu requestAnimationFrame aktif
+    let reqAnFrame = false; // Flag untuk memastikan hanya satu requestAnimationFrame aktif
 
     const handleScroll = () => {
         let windowScrolled = window.scrollY;
@@ -26,12 +26,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         currentScrolled = windowScrolled;
-        ticking = false; // Reset flag setelah fungsi selesai dieksekusi
+        reqAnFrame = false; // Reset flag setelah fungsi selesai dieksekusi
     };
 
     window.addEventListener('scroll', () => {
-        if (!ticking) {
-            ticking = true;
+        if (!reqAnFrame) {
+            reqAnFrame = true;
             requestAnimationFrame(handleScroll); // Optimasi performa dengan requestAnimationFrame
         }
     });

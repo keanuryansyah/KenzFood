@@ -37,6 +37,7 @@
 
 
     <script src="{{asset('js/main.js')}}"></script>
+    <script src="{{asset('js/functions.js')}}"></script>
     @stack('scripts')
 
 </body>
